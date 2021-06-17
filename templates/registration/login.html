@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Imtahan Idarəetme {% endblock %}
+{% block main %}
+    <div id="preloader">
+        <div class="canvas">
+            <img src="{% static 'assets/img/logo.png' %}" alt="logo" class="loader-logo">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+    <!-- Begin Container -->
+    <div class="container-fluid no-padding h-100">
+        <div class="row flex-row h-100 bg-white">
+            <!-- Begin Left Content -->
+            <div class="col-xl-8 col-lg-6 col-md-5 no-padding">
+                <div class="elisyam-bg background-01">
+                    <div class="elisyam-overlay overlay-01"></div>
+                    <div class="authentication-col-content mx-auto">
+                        <h1 class="gradient-text-01">
+                            Please enter your username and password to continue
+                        </h1>
+{#                        <span class="description">#}
+{#                                Etiam consequat urna at magna bibendum, in tempor arcu fermentum vitae mi massa egestas.#}
+{#                            </span>#}
+                    </div>
+                </div>
+            </div>
+            <!-- End Left Content -->
+            <!-- Begin Right Content -->
+            <div class="col-xl-4 col-lg-6 col-md-7 my-auto no-padding">
+                <!-- Begin Form -->
+                <div class="authentication-form mx-auto">
+                    <div class="logo-centered">
+                        <a href="db-default.html">
+                            <img src="{% static 'assets/img/logo.png' %}" alt="logo">
+                        </a>
+                    </div>
+                    <h3>Sign In To Management Page</h3>
+                    <form method="post" id="form_login">
+                        {% csrf_token %}
+                        {#    {{ form.as_p }}#}
+                        <div class="group material-input">
+                            <input type="text" name="username" required id="id_username">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label for="id_username">Username</label>
+                        </div>
+                        <div class="group material-input">
+                            <input type="password" name="password" id="id_password" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label for="id_password">Password</label>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-gradient-01">Login</button>
+                    </form>
+                </div>
+                <!-- End Form -->
+            </div>
+            <!-- End Right Content -->
+        </div>
+        <!-- End Row -->
+    </div>
+    <!-- End Container -->
+{% endblock %}
