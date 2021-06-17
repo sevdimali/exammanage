@@ -1,0 +1,10 @@
+venv/
+.idea/
+.vscode/
+*.pyc
+*/__pycache__/
+pgdb/
+media/
+messages.log
+node_modules
+*-lock.json
