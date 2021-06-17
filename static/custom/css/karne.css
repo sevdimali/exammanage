@@ -1,0 +1,366 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+body {
+    line-height: 24px;
+    color: #4d4d4d;
+    font-size: 16px;
+}
+
+img {
+    border: 0;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 0px;
+    padding: 0;
+    text-align: left;
+    border: 1px solid #000 !important;
+    font-size: 1.20em !important;
+}
+
+table td {
+
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 1px;
+    padding-left: 0px;
+    line-height: 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+
+table.karne code {
+    /*font-size:1.58em;
+    */
+    color: #770438;
+    white-space: pre;
+}
+
+table.karne {
+    border-bottom: 0px !important;
+}
+
+
+code {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-size: 12px;
+    color: #333333;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 1px 2px;
+    color: #ea7777;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8
+}
+
+/*p {*/
+/*    margin-bottom: 24px*/
+/*}*/
+
+.student_data {
+    font-size: 12px;
+}
+
+.karne_umumi {
+    background: #ECEEEE;
+    margin: 10px 0px;
+    width: 720px !important;
+    height: auto;
+    /*float: left;*/
+    display: inline-block;
+    margin-right: 20px !important;
+    margin-left: -10px;
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+
+div.karne_umumi img {
+    border: none;
+    float: left;
+}
+
+div.karne_umumi table td img {
+    border: none;
+    float: none;
+}
+
+.vereqe_basliq {
+    background: #efefee;
+    border-radius: 8px 8px 0 0;
+    padding: 5px;
+    margin: auto 1px;
+}
+
+.vereqe_body {
+    background: #FFFFFF;
+    border-radius: 0 0 8px 8px;
+    padding: 0px;
+    margin: 0 auto;
+    color: #515658;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    min-height: 300px;
+    max-height: 1080px;
+    min-width: 400px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.cvb {
+
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-size: 12px;
+    color: #333333;
+    background-color: #f7f7f9;
+    border: 1px solid #00000038;
+    margin-left: 2px;
+    padding-left: 1px;
+    padding-right: 1px;
+    line-height: normal;
+    text-align: center;
+}
+
+.cvb1 {
+
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-size: 12px;
+    color: #333333;
+    background-color: #f7f7f9;
+    border: 1px solid #000;
+    margin-left: 2px;
+    padding-left: 1px;
+    padding-right: 1px;
+    width: 40px;
+    display: inline-block;
+    line-height: normal;
+}
+
+.cvb2 {
+
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-size: 12px;
+    color: #333333;
+    background-color: #f7f7f9;
+    border: 1px solid #000;
+    margin-left: 2px;
+    padding-left: 1px;
+    padding-right: 1px;
+    width: 70px;
+    line-height: normal;
+    display: inline-block;
+}
+
+.cvb3 {
+
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-size: 12px;
+    color: #333333;
+    background-color: #f7f7f9;
+    border: 1px solid #000;
+    margin-left: 2px;
+    padding-left: 1px;
+    padding-right: 1px;
+    width: 85px;
+    text-align: center;
+    display: inline-block;
+    line-height: normal;
+}
+
+.info {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-size: 11px;
+    color: #333333;
+    background-color: #f7f7f9;
+    border: 1px solid #00000038;
+    margin-left: 2px;
+    margin-top: 2px;
+    padding-left: 1px;
+    width: 40px;
+    text-align: left;
+    display: inline-block;
+    font-weight: 700;
+}
+
+hr {
+    margin-bottom: 1px !important;
+    margin-top: 1px !important;
+}
+
+/*umumi siyahi */
+
+table.minimalistBlack {
+    border: 3px solid #000000;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+table.minimalistBlack td, table.minimalistBlack th {
+    border: 1px solid #000000;
+    padding: 2px 1px;
+}
+
+table.minimalistBlack tbody td {
+    font-size: 13px;
+}
+
+table.minimalistBlack thead {
+    background: #CFCFCF;
+    background: -moz-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+    background: -webkit-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+    background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+    border-bottom: 3px solid #000000;
+}
+
+table.minimalistBlack thead th {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+    text-align: left;
+}
+
+
+.qapali-cvb {
+    border: 1px solid #000;
+    padding: 0px 2px;
+    display: inline-block;
+    width: 160px;
+}
+
+.diger-cvb {
+    border: 1px solid #000;
+    padding: 0px 2px;
+    display: inline-block;
+    width: 130px;
+}
+
+.cvb-title {
+    color: #000;
+    font-weight: bold;
+    margin-top: 1px;
+}
+
+
+@media print {
+    .printmebro {
+        display: none;
+    }
+}
+
+.cvb22 {
+
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-size: 12px;
+    color: #333333;
+    background-color: #f7f7f9;
+    border: 1px solid #000;
+    margin-left: 2px;
+    padding-left: 1px;
+    padding-right: 1px;
+    width: 125px;
+    line-height: normal;
+    display: inline-block;
+}
+
+.wrong_answer {
+    background-color: #e91e632e !important;
+}
+
+.correct_answer {
+    background-color: #4caf5036 !important;
+}
+
+@media print {
+    .karne-siyahi .karne_umumi:nth-child(4n+4) {
+        page-break-after: always;
+    }
+}
+
+.riy_uyg {
+    display: inline-block;
+    width: 45px !important;
+}
+.cvb15{
+    display: inline-block;
+    width: 18px;
+}
+
+.info1 {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-size: 12px;
+    color: #333333;
+    background-color: #f7f7f9;
+    border: 1px solid #000;
+    margin-left: 2px;
+    margin-top: 2px;
+    padding-left: 1px;
+    width: 45px;
+    text-align: left;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.uygunlug{
+    width: 115px !important;
+}
+
+.info_data{
+    width: 20px !important;
+}
+
+.info-blok {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-size: 11px;
+    color: #333333;
+    background-color: #f7f7f9;
+    border: 1px solid #00000038;
+    margin-left: 2px;
+    margin-top: 2px;
+    padding-left: 1px;
+    width: 100px;
+    text-align: left;
+    display: inline-block;
+    font-weight: 700;
+}

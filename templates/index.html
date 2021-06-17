@@ -1,0 +1,142 @@
+{% extends "base.html" %}`
+{% load static %}
+{% block main %}
+
+    <div id="preloader">
+        <div class="canvas">
+            <img src="{% static 'assets/img/logo.png' %}" alt="logo" class="loader-logo">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+    <div class="page">
+        <!-- Begin Header -->
+        <header class="header">
+            <nav class="navbar fixed-top">
+
+                <!-- Begin Topbar -->
+                <div class="navbar-holder d-flex align-items-center align-middle justify-content-between">
+                    <!-- Begin Logo -->
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-brand">
+                            <div class="brand-image brand-big">
+                                <img src="{% static 'assets/img/logo-big.png' %}" alt="logo" class="logo-big">
+                            </div>
+                            <div class="brand-image brand-small">
+                                <img src="{% static 'assets/img/logo.png' %}" alt="logo" class="logo-small">
+                            </div>
+                        </a>
+                        <!-- Toggle Button -->
+                        <a id="toggle-btn" href="#" class="menu-btn active">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                        <!-- End Toggle -->
+                    </div>
+                    <!-- End Logo -->
+                </div>
+                <!-- End Topbar -->
+            </nav>
+        </header>
+        <!-- End Header -->
+        <!-- Begin Page Content -->
+        <div class="page-content d-flex align-items-stretch">
+            <!-- End Left Sidebar -->
+            <div class="content-inner">
+                <div class="container-fluid">
+                    <!-- Begin Page Header-->
+                    <div class="row">
+                        <div class="page-header">
+                            <div class="d-flex align-items-center">
+                                <h2 class="page-header-title">Başlanğıc</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Page Header -->
+                    <!-- Begin Row -->
+
+                    <div class="row flex-row">
+                        <div class="col-12">
+                            <!-- Export -->
+                           <div class="widget has-shadow">
+                                    <div class="widget-header bordered no-actions d-flex align-items-center">
+                                        <h4>Imtahanlaraın siyahısı</h4>
+                                    </div>
+                                    <div class="widget-body">
+                                        <div class="table-responsive">
+                                            <table class="table mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Imtahan adi</th>
+                                                        <th>Tarix</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><a href="#">Imtahan 1</a></td>
+                                                        <td><span class="text-primary">01.01.2020</span></td>
+                                                    </tr> <tr>
+                                                        <td><a href="#">Imtahan 1</a></td>
+                                                        <td><span class="text-primary">01.01.2020</span></td>
+                                                    </tr> <tr>
+                                                        <td><a href="#">Imtahan 1</a></td>
+                                                        <td><span class="text-primary">01.01.2020</span></td>
+                                                    </tr> <tr>
+                                                        <td><a href="#">Imtahan 1</a></td>
+                                                        <td><span class="text-primary">01.01.2020</span></td>
+                                                    </tr> <tr>
+                                                        <td><a href="#">Imtahan 1</a></td>
+                                                        <td><span class="text-primary">01.01.2020</span></td>
+                                                    </tr> <tr>
+                                                        <td><a href="#">Imtahan 1</a></td>
+                                                        <td><span class="text-primary">01.01.2020</span></td>
+                                                    </tr> <tr>
+                                                        <td><a href="#">Imtahan 1</a></td>
+                                                        <td><span class="text-primary">01.01.2020</span></td>
+                                                    </tr> <tr>
+                                                        <td><a href="#">Imtahan 1</a></td>
+                                                        <td><span class="text-primary">01.01.2020</span></td>
+                                                    </tr> <tr>
+                                                        <td><a href="#">Imtahan 1</a></td>
+                                                        <td><span class="text-primary">01.01.2020</span></td>
+                                                    </tr> <tr>
+                                                        <td><a href="#">Imtahan 1</a></td>
+                                                        <td><span class="text-primary">01.01.2020</span></td>
+                                                    </tr> <tr>
+                                                        <td><a href="#">Imtahan 1</a></td>
+                                                        <td><span class="text-primary">01.01.2020</span></td>
+                                                    </tr> <tr>
+                                                        <td><a href="#">Imtahan 1</a></td>
+                                                        <td><span class="text-primary">01.01.2020</span></td>
+                                                    </tr> <tr>
+                                                        <td><a href="#">Imtahan 1</a></td>
+                                                        <td><span class="text-primary">01.01.2020</span></td>
+                                                    </tr> <tr>
+                                                        <td><a href="#">Imtahan 1</a></td>
+                                                        <td><span class="text-primary">01.01.2020</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Default -->
+                            <!-- End Export -->
+                        </div>
+                    </div>
+                    <!-- End Row -->
+                </div>
+                <!-- End Container -->
+
+                <!-- Begin Page Footer-->
+                <footer class="main-footer fixed-footer">
+                    {% include '_partials/footer.html' %}
+                </footer>
+                <!-- End Page Footer -->
+            </div>
+            <!-- End Content -->
+        </div>
+        <!-- End Page Content -->
+    </div>
+{% endblock %}

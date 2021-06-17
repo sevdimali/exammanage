@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="author" content="www.sevdimali.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+    {#    <link rel="shortcut icon" href="{% static_env "assets/images/favicon.png" %}">#}
+    {% include "_partials/links.html" %}
+</head>
+<body>
+    {% block main %}
+
+    {% endblock %}
+{% include "_partials/scripts.html" %}
+{% if messages %}
+    {% for message in messages %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            new Noty({
+                type: 'notification',
+                layout: 'center',
+                text: '{{ message }}',
+                closeWith: ['click', 'button'],
+                animation: {
+                    open: 'animated fadeInDown', // Animate.css class names
+                    close: 'animated fadeOutUp' // Animate.css class names
+                }
+            }).show()
+        })
+    </script>
+    {% endfor %}
+{% endif %}
+{% block js_import %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,179 @@
+{% extends "base.html" %}`
+{% load static %}
+{% block main %}
+
+    <div id="preloader">
+        <div class="canvas">
+            <img src="{% static 'assets/img/logo.png' %}" alt="logo" class="loader-logo">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+    <div class="page">
+        <!-- Begin Header -->
+        <header class="header">
+            <nav class="navbar fixed-top">
+
+                <!-- Begin Topbar -->
+                <div class="navbar-holder d-flex align-items-center align-middle justify-content-between">
+                    <!-- Begin Logo -->
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-brand">
+                            <div class="brand-image brand-big">
+                                <img src="{% static 'assets/img/logo-big.png' %}" alt="logo" class="logo-big">
+                            </div>
+                            <div class="brand-image brand-small">
+                                <img src="{% static 'assets/img/logo.png' %}" alt="logo" class="logo-small">
+                            </div>
+                        </a>
+                        <!-- Toggle Button -->
+                        <a id="toggle-btn" href="#" class="menu-btn active">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                        <!-- End Toggle -->
+                    </div>
+                    <!-- End Logo -->
+                </div>
+                <!-- End Topbar -->
+            </nav>
+        </header>
+        <!-- End Header -->
+        <!-- Begin Page Content -->
+        <div class="page-content d-flex align-items-stretch">
+            <!-- End Left Sidebar -->
+            <div class="content-inner">
+                <div class="container-fluid">
+                    <!-- Begin Page Header-->
+                    <div class="row">
+                        <div class="page-header">
+                            <div class="d-flex align-items-center">
+                                <h2 class="page-header-title">Imtahan Duzgun Cavablari</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Page Header -->
+                    <!-- Begin Row -->
+
+                    <div class="row justify-content-center">
+                        <div class="col-xl-10 col-12">
+                            <!-- Begin Timeline -->
+                            <div class="timeline timeline-line-solid">
+                                {% for i in '123456789' %}
+                                    <!-- Begin Timeline Item -->
+                                    <div class="timeline-item">
+                                        <div class="timeline-point timeline-point"></div>
+                                        <!-- Begin Timeline Event -->
+                                        <div class="timeline-event">
+                                            <!-- Begin Widget -->
+                                            <div class="widget has-shadow">
+                                                <!-- Begin Widget Header -->
+                                                <div class="widget-header d-flex align-items-center">
+                                                    <div class="user-image">
+                                                        <img class="rounded-circle"
+                                                             src="assets/img/avatar/avatar-04.jpg" alt="...">
+                                                    </div>
+                                                    <div class="d-flex flex-column mr-auto">
+                                                        <div class="title">
+                                                            <span class="username">Nathan Hunter</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="widget-options">
+                                                        <div class="dropdown">
+                                                            <button type="button" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"
+                                                                    class="dropdown-toggle">
+                                                                <i class="la la-ellipsis-h"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                                <a href="#" class="dropdown-item">
+                                                                    <i class="la la-edit"></i>Edit Post
+                                                                </a>
+                                                                <a href="#" class="dropdown-item">
+                                                                    <i class="la la-trash"></i>Delete Post
+                                                                </a>
+                                                                <a href="#" class="dropdown-item">
+                                                                    <i class="la la-bell-slash"></i>Disable
+                                                                    Notifications
+                                                                </a>
+                                                                <a href="#" class="dropdown-item faq">
+                                                                    <i class="la la-question-circle"></i>FAQ
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End Widget Header -->
+                                                <!-- Begin Widget Body -->
+                                                <div class="widget-body">
+                                                    <p>
+                                                        Nullam aliquam felis ut elit rutrum mattis. Curabitur arcu eros,
+                                                        imperdiet id gravida sit amet, pulvinar non ex. Cras ac ligula
+                                                        eget sapien suscipit luctus non a risus. Curabitur iaculis
+                                                        consectetur enim vel dignissim. Ut ac mi dolor. Pellentesque
+                                                        habitant morbi tristique senectus et netus et malesuada fames ac
+                                                        turpis egestas. Integer lobortis justo erat, ac faucibus risus
+                                                        laoreet semper. Aenean et sollicitudin ante, vel finibus velit.
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </p>
+                                                </div>
+                                                <!-- End Widget Body -->
+                                            </div>
+                                            <!-- End Widget -->
+                                            <div class="time-right">25 min ago</div>
+                                        </div>
+                                        <!-- End Timeline Event -->
+                                    </div>
+                                    <!-- End Timeline Item -->
+                                {% endfor %}
+                            </div>
+                            <!-- End Timeline -->
+                        </div>
+                    </div>
+                    <!-- End Row -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="widget has-shadow">
+                                <div class="widget-body">
+                                    <form action="#" method="POST" id="upload-exam-form" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 form-control-label"
+                                                   for="description">Aciqlama</label>
+                                            <textarea id="description" name="description" rows="4" cols="50">
+                                           </textarea>
+
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 form-control-label">Fayl Seçin</label>
+                                            <div class="col-lg-9 select mb-3">
+                                                <input type="file" name="upload_file" class="form-control-file"
+                                                       id="exampleFormControlFile1">
+                                            </div>
+                                        </div>
+
+                                        <div class="text-right">
+                                            <button class="btn btn-gradient-01" type="submit">Əlavə et</button>
+                                            <button class="btn btn-shadow" type="reset">Sıfırla</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Row -->
+                </div>
+                <!-- End Container -->
+
+                <!-- Begin Page Footer-->
+                <footer class="main-footer fixed-footer">
+                    {% include '_partials/footer.html' %}
+                </footer>
+                <!-- End Page Footer -->
+            </div>
+            <!-- End Content -->
+        </div>
+        <!-- End Page Content -->
+    </div>
+{% endblock %}
