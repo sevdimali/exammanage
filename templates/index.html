@@ -59,69 +59,35 @@
                     <div class="row flex-row">
                         <div class="col-12">
                             <!-- Export -->
-                           <div class="widget has-shadow">
-                                    <div class="widget-header bordered no-actions d-flex align-items-center">
-                                        <h4>Imtahanlaraın siyahısı</h4>
-                                    </div>
-                                    <div class="widget-body">
-                                        <div class="table-responsive">
-                                            <table class="table mb-0">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Imtahan adi</th>
-                                                        <th>Tarix</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><a href="#">Imtahan 1</a></td>
-                                                        <td><span class="text-primary">01.01.2020</span></td>
-                                                    </tr> <tr>
-                                                        <td><a href="#">Imtahan 1</a></td>
-                                                        <td><span class="text-primary">01.01.2020</span></td>
-                                                    </tr> <tr>
-                                                        <td><a href="#">Imtahan 1</a></td>
-                                                        <td><span class="text-primary">01.01.2020</span></td>
-                                                    </tr> <tr>
-                                                        <td><a href="#">Imtahan 1</a></td>
-                                                        <td><span class="text-primary">01.01.2020</span></td>
-                                                    </tr> <tr>
-                                                        <td><a href="#">Imtahan 1</a></td>
-                                                        <td><span class="text-primary">01.01.2020</span></td>
-                                                    </tr> <tr>
-                                                        <td><a href="#">Imtahan 1</a></td>
-                                                        <td><span class="text-primary">01.01.2020</span></td>
-                                                    </tr> <tr>
-                                                        <td><a href="#">Imtahan 1</a></td>
-                                                        <td><span class="text-primary">01.01.2020</span></td>
-                                                    </tr> <tr>
-                                                        <td><a href="#">Imtahan 1</a></td>
-                                                        <td><span class="text-primary">01.01.2020</span></td>
-                                                    </tr> <tr>
-                                                        <td><a href="#">Imtahan 1</a></td>
-                                                        <td><span class="text-primary">01.01.2020</span></td>
-                                                    </tr> <tr>
-                                                        <td><a href="#">Imtahan 1</a></td>
-                                                        <td><span class="text-primary">01.01.2020</span></td>
-                                                    </tr> <tr>
-                                                        <td><a href="#">Imtahan 1</a></td>
-                                                        <td><span class="text-primary">01.01.2020</span></td>
-                                                    </tr> <tr>
-                                                        <td><a href="#">Imtahan 1</a></td>
-                                                        <td><span class="text-primary">01.01.2020</span></td>
-                                                    </tr> <tr>
-                                                        <td><a href="#">Imtahan 1</a></td>
-                                                        <td><span class="text-primary">01.01.2020</span></td>
-                                                    </tr> <tr>
-                                                        <td><a href="#">Imtahan 1</a></td>
-                                                        <td><span class="text-primary">01.01.2020</span></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                            <div class="widget has-shadow">
+                                <div class="widget-header bordered no-actions d-flex align-items-center">
+                                    <h4>Imtahanlaraın siyahısı</h4>
+                                </div>
+                                <div class="widget-body">
+                                    <div class="table-responsive">
+                                        <table class="table mb-0">
+                                            <thead>
+                                            <tr>
+                                                <th>Imtahan adi</th>
+                                                <th>Tarix</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for imtahan in imtahanlar %}
+
+                                                <tr>
+                                                    <td><a href="#">{{ imtahan.name}}</a></td>
+                                                    <td><span class="text-primary">{{ imtahan.tarix}}</span></td>
+                                                </tr>
+                                                <tr>
+                                            {% endfor %}
+
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-                                <!-- End Default -->
+                            </div>
+                            <!-- End Default -->
                             <!-- End Export -->
                         </div>
                     </div>
