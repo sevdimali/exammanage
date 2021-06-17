@@ -76,7 +76,7 @@
                                             {% for imtahan in imtahanlar %}
 
                                                 <tr>
-                                                    <td><a href="#">{{ imtahan.name}}</a></td>
+                                                    <td><a href="{% url 'exam_correct' pk=imtahan.pk  %}">{{ imtahan.name}}</a></td>
                                                     <td><span class="text-primary">{{ imtahan.tarix}}</span></td>
                                                 </tr>
                                                 <tr>
