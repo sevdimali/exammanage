@@ -40,16 +40,22 @@
                                             <tr>
                                                 <th>Imtahan adi</th>
                                                 <th>Tarix</th>
+                                                <th>Nəticələr</th>
+                                                <th>Düzgün Cavablar</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             {% for imtahan in imtahanlar %}
 
                                                 <tr>
-                                                    <td>
-                                                        <a href="{% url 'exam_correct' pk=imtahan.pk %}">{{ imtahan.name }}</a>
-                                                    </td>
+                                                    <td><span class="text-primary">{{ imtahan.name }}</span></td>
                                                     <td><span class="text-primary">{{ imtahan.tarix }}</span></td>
+                                                    <td>
+                                                        <a href="{% url 'neticeler' pk=imtahan.pk %}"><button type="button" class="btn btn-success">Nəticələr</button></a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{% url 'exam_correct' pk=imtahan.pk %}"><button type="button" class="btn btn-warning">Düzgün Cavablar</button></a>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                             {% endfor %}

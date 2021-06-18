@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from core.views import Imtahan, DuzgunCavab
+from core.views import Imtahan, DuzgunCavab, NeticeV
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -9,6 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Imtahan.as_view(), name='index'),
     path('dg/<int:pk>', DuzgunCavab.as_view(), name='exam_correct'),
+    path('neticeler/<int:pk>', NeticeV.as_view(), name='neticeler'),
     path('', include('django.contrib.auth.urls')),
 
 ]
