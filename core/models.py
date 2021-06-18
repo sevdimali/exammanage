@@ -25,6 +25,9 @@ class Neticeler(BaseModel):
     imtahan_id = models.ManyToManyField(Imtahan, blank=True)
     descriptions = models.TextField(null=True, blank=True)
 
+    def __str__(self):
+        return f"{self.imtahan_id}"
+
 
 class ExamCorrect(BaseModel):
     file = models.FileField(null=True, upload_to='upload', blank=True)
