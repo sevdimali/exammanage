@@ -1,5 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView
+from django.contrib import messages
+from .forms import ExamCorrectForms
 from .models import Imtahan as imtModel, ExamCorrect
 
 # Create your views here.
@@ -35,3 +37,13 @@ class DuzgunCavab(BaseContext, TemplateView):
         context.update({'duzgun': self.duzgun})
 
         return context
+
+    def post(self, request, pk):
+        exam_form = ExamCorrectForms(request.POST, request.FILES)
+        if exam_form.is_valid():
+            ec_inst = exam_form.save()
+            exam = get_object_or_404(imtModel, pk=pk)
+            ec_inst.imtahan_id.add(exam)
+            ec_inst.author = request.user
+            ec_inst.save()
+        return redirect('exam_correct', pk=pk)

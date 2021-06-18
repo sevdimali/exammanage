@@ -11,26 +11,61 @@
     {% include "_partials/links.html" %}
 </head>
 <body>
-    {% block main %}
+<!-- Begin Header -->
+<header class="header">
+    <nav class="navbar fixed-top">
 
-    {% endblock %}
+        <!-- Begin Topbar -->
+        <div class="navbar-holder d-flex align-items-center align-middle justify-content-between">
+            <!-- Begin Logo -->
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">
+                    <div class="brand-image brand-big">
+                        <img src="{% static 'assets/img/logo-big.png' %}" alt="logo" class="logo-big">
+                    </div>
+                    <div class="brand-image brand-small">
+                        <img src="{% static 'assets/img/logo.png' %}" alt="logo" class="logo-small">
+                    </div>
+                </a>
+                <!-- Toggle Button -->
+                <a id="toggle-btn" href="#" class="menu-btn active">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <!-- End Toggle -->
+            </div>
+            <!-- End Logo -->
+        </div>
+        <!-- End Topbar -->
+    </nav>
+</header>
+<!-- End Header -->
+{% block main %}
+
+{% endblock %}
+<!-- Begin Page Footer-->
+<footer class="main-footer fixed-footer">
+    {% include '_partials/footer.html' %}
+</footer>
+<!-- End Page Footer -->
 {% include "_partials/scripts.html" %}
 {% if messages %}
     {% for message in messages %}
-    <script type="text/javascript">
-        $(document).ready(function () {
-            new Noty({
-                type: 'notification',
-                layout: 'center',
-                text: '{{ message }}',
-                closeWith: ['click', 'button'],
-                animation: {
-                    open: 'animated fadeInDown', // Animate.css class names
-                    close: 'animated fadeOutUp' // Animate.css class names
-                }
-            }).show()
-        })
-    </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                new Noty({
+                    type: 'notification',
+                    layout: 'center',
+                    text: '{{ message }}',
+                    closeWith: ['click', 'button'],
+                    animation: {
+                        open: 'animated fadeInDown', // Animate.css class names
+                        close: 'animated fadeOutUp' // Animate.css class names
+                    }
+                }).show()
+            })
+        </script>
     {% endfor %}
 {% endif %}
 {% block js_import %}

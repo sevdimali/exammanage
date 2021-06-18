@@ -9,11 +9,11 @@ class ImtahanAdmin(admin.ModelAdmin):
 
 
 class NeticelerAdmin(admin.ModelAdmin):
-    list_display = ('file',)
+    list_display = ('descriptions',)
 
 
 class ExamCorrectAdmin(admin.ModelAdmin):
-    list_display = ('file',)
+    list_display = ('descriptions',)
 
 
 admin.site.register(Imtahan, ImtahanAdmin)

@@ -10,36 +10,6 @@
     </div>
     <!-- End Preloader -->
     <div class="page">
-        <!-- Begin Header -->
-        <header class="header">
-            <nav class="navbar fixed-top">
-
-                <!-- Begin Topbar -->
-                <div class="navbar-holder d-flex align-items-center align-middle justify-content-between">
-                    <!-- Begin Logo -->
-                    <div class="navbar-header">
-                        <a href="#" class="navbar-brand">
-                            <div class="brand-image brand-big">
-                                <img src="{% static 'assets/img/logo-big.png' %}" alt="logo" class="logo-big">
-                            </div>
-                            <div class="brand-image brand-small">
-                                <img src="{% static 'assets/img/logo.png' %}" alt="logo" class="logo-small">
-                            </div>
-                        </a>
-                        <!-- Toggle Button -->
-                        <a id="toggle-btn" href="#" class="menu-btn active">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </a>
-                        <!-- End Toggle -->
-                    </div>
-                    <!-- End Logo -->
-                </div>
-                <!-- End Topbar -->
-            </nav>
-        </header>
-        <!-- End Header -->
         <!-- Begin Page Content -->
         <div class="page-content d-flex align-items-stretch">
             <!-- End Left Sidebar -->
@@ -76,8 +46,10 @@
                                             {% for imtahan in imtahanlar %}
 
                                                 <tr>
-                                                    <td><a href="{% url 'exam_correct' pk=imtahan.pk  %}">{{ imtahan.name}}</a></td>
-                                                    <td><span class="text-primary">{{ imtahan.tarix}}</span></td>
+                                                    <td>
+                                                        <a href="{% url 'exam_correct' pk=imtahan.pk %}">{{ imtahan.name }}</a>
+                                                    </td>
+                                                    <td><span class="text-primary">{{ imtahan.tarix }}</span></td>
                                                 </tr>
                                                 <tr>
                                             {% endfor %}
@@ -94,12 +66,6 @@
                     <!-- End Row -->
                 </div>
                 <!-- End Container -->
-
-                <!-- Begin Page Footer-->
-                <footer class="main-footer fixed-footer">
-                    {% include '_partials/footer.html' %}
-                </footer>
-                <!-- End Page Footer -->
             </div>
             <!-- End Content -->
         </div>
