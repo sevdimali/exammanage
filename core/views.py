@@ -2,14 +2,14 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView
 from django.contrib import messages
-from .forms import ExamCorrectForms, NeticelerForms
-from .models import Imtahan as imtModel, ExamCorrect,Neticeler
+from .forms import ExamCorrectForms, NeticelerForms, ImtahanForm
+from .models import Imtahan as imtModel, ExamCorrect, Neticeler
 
 # Create your views here.
 from django.views.generic.base import ContextMixin, TemplateView
 
 
-class BaseContext(LoginRequiredMixin,ContextMixin):
+class BaseContext(LoginRequiredMixin, ContextMixin):
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
         return context
@@ -21,9 +21,16 @@ class Imtahan(BaseContext, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
         imtahanlar = imtModel.objects.all().order_by('tarix')
-        context.update({'imtahanlar': imtahanlar})
+        imt_add_form = ImtahanForm()
+        context.update({'imtahanlar': imtahanlar, 'imtform': imt_add_form})
 
         return context
+
+    def post(self, request):
+        imtf = ImtahanForm(request.POST)
+        if imtf.is_valid():
+            imtf.save()
+        return redirect('index')
 
 
 class DuzgunCavab(BaseContext, TemplateView):
@@ -35,10 +42,9 @@ class DuzgunCavab(BaseContext, TemplateView):
         pk = self.kwargs.get('pk')
         imtahan = get_object_or_404(imtModel, pk=pk)
         self.duzgun = ExamCorrect.objects.filter(imtahan_id=imtahan).order_by('imtahan_id')
-        context.update({'duzgun': self.duzgun})
+        context.update({'duzgun': self.duzgun, 'imtahan': imtahan})
 
         return context
-
 
     def post(self, request, pk):
         exam_form = ExamCorrectForms(request.POST, request.FILES)
@@ -60,10 +66,9 @@ class NeticeV(BaseContext, TemplateView):
         pk = self.kwargs.get('pk')
         imtahan = get_object_or_404(imtModel, pk=pk)
         self.duzgun = Neticeler.objects.filter(imtahan_id=imtahan).order_by('imtahan_id')
-        context.update({'duzgun': self.duzgun})
+        context.update({'duzgun': self.duzgun, 'imtahan': imtahan})
 
         return context
-
 
     def post(self, request, pk):
         exam_form = NeticelerForms(request.POST, request.FILES)

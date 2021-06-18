@@ -27,6 +27,17 @@
                     <!-- Begin Row -->
 
                     <div class="row flex-row">
+                    <div class="col-12">
+                            <div class="widget has-shadow">
+                                <div class="widget-body">
+                                    <form action="{% url 'index' %}" method="post">
+                                        {% csrf_token %}
+                                        {{ imtform }}
+                                        <input type="submit" value="send">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-12">
                             <!-- Export -->
                             <div class="widget has-shadow">
