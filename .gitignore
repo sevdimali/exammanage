@@ -8,3 +8,4 @@ media/
 messages.log
 node_modules
 *-lock.json
+db.sqlite3
