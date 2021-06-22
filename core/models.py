@@ -9,7 +9,7 @@ class BaseModel(models.Model):
     udate = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ("cdate",)
+        ordering = ("-cdate",)
         abstract = True
 
 
@@ -25,7 +25,7 @@ class Neticeler(BaseModel):
     file = models.FileField(null=True, upload_to='upload', blank=True)
     imtahan_id = models.ManyToManyField(Imtahan, blank=True)
     descriptions = models.TextField(null=True, blank=True)
-    author = models.ForeignKey(User, blank=True, on_delete=models.SET_NULL,null=True)
+    author = models.ForeignKey(User, blank=True, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return f"{self.imtahan_id}"
@@ -35,4 +35,8 @@ class ExamCorrect(BaseModel):
     file = models.FileField(null=True, upload_to='upload', blank=True)
     imtahan_id = models.ManyToManyField(Imtahan, blank=True)
     descriptions = models.TextField(null=True, blank=True)
-    author = models.ForeignKey(User, blank=True, on_delete=models.SET_NULL,null=True)
+    author = models.ForeignKey(User, blank=True, on_delete=models.SET_NULL, null=True)
+
+
+class ActivityLog(BaseModel):
+    log = models.CharField(max_length=255, null=True, blank=True)

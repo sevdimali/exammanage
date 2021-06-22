@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView
 from django.contrib import messages
 from .forms import ExamCorrectForms, NeticelerForms, ImtahanForm
-from .models import Imtahan as imtModel, ExamCorrect, Neticeler
+from .models import Imtahan as imtModel, ExamCorrect, Neticeler, ActivityLog
 
 # Create your views here.
 from django.views.generic.base import ContextMixin, TemplateView
@@ -29,7 +29,11 @@ class Imtahan(BaseContext, TemplateView):
     def post(self, request):
         imtf = ImtahanForm(request.POST)
         if imtf.is_valid():
-            imtf.save()
+            cimis = imtf.save()
+            log = f"{request.user.get_full_name()}, {cimis} adli yeni imtahan yaratdi"
+            ac_log = ActivityLog(log=log)
+            ac_log.save()
+
         return redirect('index')
 
 
@@ -53,7 +57,10 @@ class DuzgunCavab(BaseContext, TemplateView):
             exam = get_object_or_404(imtModel, pk=pk)
             ec_inst.imtahan_id.add(exam)
             ec_inst.author = request.user
-            ec_inst.save()
+            cimis = ec_inst.save()
+            log = f"{request.user.get_full_name()}, {exam} ucun yeni duzgun cavablari yukledi."
+            ac_log = ActivityLog(log=log)
+            ac_log.save()
         return redirect('exam_correct', pk=pk)
 
 
@@ -77,5 +84,8 @@ class NeticeV(BaseContext, TemplateView):
             exam = get_object_or_404(imtModel, pk=pk)
             ec_inst.imtahan_id.add(exam)
             ec_inst.author = request.user
-            ec_inst.save()
+            cimis = ec_inst.save()
+            log = f"{request.user.get_full_name()}, {exam} ucun yeni netice yukledi."
+            ac_log = ActivityLog(log=log)
+            ac_log.save()
         return redirect('neticeler', pk=pk)

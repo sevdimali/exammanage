@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from core.models import Imtahan, Neticeler, ExamCorrect
+from core.models import Imtahan, Neticeler, ExamCorrect,ActivityLog
 
 
 class ImtahanAdmin(admin.ModelAdmin):
@@ -19,3 +19,4 @@ class ExamCorrectAdmin(admin.ModelAdmin):
 admin.site.register(Imtahan, ImtahanAdmin)
 admin.site.register(Neticeler, NeticelerAdmin)
 admin.site.register(ExamCorrect, ExamCorrectAdmin)
+admin.site.register(ActivityLog)
